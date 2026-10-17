@@ -245,7 +245,7 @@ export default function MyPropertiesPage() {
                 <div>
                   <span style={{ fontSize: "0.72rem", color: "var(--text-muted)" }}>Min. Rent</span>
                   <div style={{ fontSize: "1rem", fontWeight: 800, color: "#007AFF" }}>
-                    ₹{p.startingPrice.toLocaleString("en-IN")}/mo
+                    ₹{(p.startingPrice || p.minPrice || 0).toLocaleString("en-IN")}/mo
                   </div>
                 </div>
 
