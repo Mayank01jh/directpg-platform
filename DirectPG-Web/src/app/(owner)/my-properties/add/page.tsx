@@ -113,6 +113,8 @@ export default function AddPropertyPage() {
       owner: {
         name: "Lakshmi Narayanan",
         phone: "+91 98450 12847",
+        whatsapp: "+91 98450 12847",
+        experience: "5+ years verified host",
         verified: true,
         responseTime: "Under 15 mins",
       },
