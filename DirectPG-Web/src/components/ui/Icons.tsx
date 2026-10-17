@@ -412,3 +412,39 @@ export function IconUpload({ size = 18, color = "currentColor", style }: IconPro
   );
 }
 
+export function ShieldCheckIcon({ width = 20, height = 20, color = "currentColor", style }: { width?: number; height?: number; color?: string; style?: React.CSSProperties }) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function CheckCircleIcon({ width = 20, height = 20, color = "currentColor", style }: { width?: number; height?: number; color?: string; style?: React.CSSProperties }) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function ArrowRightIcon({ width = 18, height = 18, color = "currentColor", style }: { width?: number; height?: number; color?: string; style?: React.CSSProperties }) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style}>
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </svg>
+  );
+}
+
+export function LockIcon({ width = 18, height = 18, color = "currentColor", style }: { width?: number; height?: number; color?: string; style?: React.CSSProperties }) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style}>
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
+  );
+}
+

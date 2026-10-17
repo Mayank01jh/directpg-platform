@@ -464,7 +464,7 @@ export default function AlignedGridSection() {
               </span>
             </div>
 
-            <h2 style={{
+            <h1 style={{
               fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
               fontWeight: 800,
               letterSpacing: "-0.03em",
@@ -473,7 +473,7 @@ export default function AlignedGridSection() {
               color: "#FFFFFF",
             }}>
               Spaces Designed for Students & Working Professionals
-            </h2>
+            </h1>
 
             <p style={{
               fontSize: "0.92rem",

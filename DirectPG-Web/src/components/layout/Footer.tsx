@@ -42,6 +42,8 @@ export default function Footer() {
         { label: "About DirectPG", href: ROUTES.ABOUT },
         { label: "Safety & Biometrics", href: "/safety" },
         { label: "Zero Brokerage Guarantee", href: "/guarantee" },
+        { label: "Refund Policy", href: "/refund" },
+        { label: "Cookie Policy", href: "/cookies" },
         { label: "Customer Support", href: "/support" },
         { label: "Terms of Service", href: "/terms" },
         { label: "Privacy Policy", href: "/privacy" },
@@ -124,7 +126,7 @@ export default function Footer() {
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
             <img
               src="/logo-icon.png"
-              alt="direct PG"
+              alt="DirectPG Verified Stays"
               style={{
                 height: "26px",
                 width: "auto",
@@ -133,16 +135,20 @@ export default function Footer() {
               }}
             />
             <span style={{ fontSize: "0.78rem" }}>
-              Copyright © 2026 DirectPG Inc. All rights reserved.
+              DirectPG Technologies Pvt. Ltd. • CIN: U72900KA2026PTC198420 • Koramangala 4th Block, Bangalore • All rights reserved.
             </span>
           </div>
 
-          <div style={{ display: "flex", gap: "1.25rem", fontSize: "0.76rem" }}>
-            <Link href="/privacy" style={{ color: "var(--text-secondary)" }}>Privacy Policy</Link>
+          <div style={{ display: "flex", gap: "1.25rem", fontSize: "0.76rem", flexWrap: "wrap" }}>
+            <Link href="/privacy" style={{ color: "var(--text-secondary)" }}>Privacy</Link>
             <span>•</span>
-            <Link href="/terms" style={{ color: "var(--text-secondary)" }}>Terms of Use</Link>
+            <Link href="/terms" style={{ color: "var(--text-secondary)" }}>Terms</Link>
             <span>•</span>
-            <Link href="/sitemap" style={{ color: "var(--text-secondary)" }}>Site Map</Link>
+            <Link href="/refund" style={{ color: "var(--text-secondary)" }}>Refunds</Link>
+            <span>•</span>
+            <Link href="/cookies" style={{ color: "var(--text-secondary)" }}>Cookies</Link>
+            <span>•</span>
+            <Link href="/sitemap.xml" style={{ color: "var(--text-secondary)" }}>Sitemap</Link>
             <span>•</span>
             <span style={{ color: "var(--apple-blue)", fontWeight: 600 }}>India (English)</span>
           </div>
