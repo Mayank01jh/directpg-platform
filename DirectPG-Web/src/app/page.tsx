@@ -3,7 +3,6 @@ import AlignedGridSection from "@/components/layout/AlignedGridSection";
 import FeaturedListings from "@/components/listings/FeaturedListings";
 import HowItWorks from "@/components/layout/HowItWorks";
 import Testimonials from "@/components/layout/Testimonials";
-import CTABanner from "@/components/layout/CTABanner";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
@@ -31,9 +30,6 @@ export default function HomePage() {
 
         {/* Tenant Ratings & Verified Reviews */}
         <Testimonials />
-
-        {/* For Property Owners Partner Banner */}
-        <CTABanner />
       </main>
       <Footer />
     </>
