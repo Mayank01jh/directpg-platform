@@ -1,5 +1,5 @@
 export interface RoomPlan {
-  id?: string;
+  id: string;
   name: string;
   type: "single" | "double" | "triple" | "four";
   price: number;
