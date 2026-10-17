@@ -23,13 +23,17 @@ export default function Navbar() {
     return () => window.removeEventListener("user-updated", handleUserUpdate);
   }, []);
 
-  // Determine if viewing as Owner or Tenant
-  const isOwnerRoute =
+  // Strict route-based role view separation:
+  // Owner screens are strictly /dashboard, /my-properties, /earnings, /bookings
+  const isOwnerPage =
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/my-properties") ||
-    pathname.startsWith("/earnings");
+    pathname.startsWith("/earnings") ||
+    pathname.startsWith("/bookings");
 
-  const isOwner = isOwnerRoute || currentUser?.role === "owner";
+  // On tenant pages, we strictly show tenant options and NEVER show owner options (+ List PG, Host Portal badge)
+  // On owner pages, we strictly show owner options and NEVER show tenant options (Explore Stays, Wishlist, etc.)
+  const isOwner = isOwnerPage;
 
   // Strict Role-Based Navigation Links
   const ownerNavLinks = [
@@ -93,7 +97,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Role pill indicator */}
+          {/* Role pill indicator - ONLY ON OWNER PAGES */}
           {isOwner && (
             <span
               style={{
@@ -150,7 +154,7 @@ export default function Navbar() {
 
         {/* Right-Side Actions (Strict 60:30:10 palette) */}
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          {/* ONLY SHOW '+ List PG' FOR OWNERS (NEVER TO TENANTS) */}
+          {/* ONLY SHOW '+ List PG' ON OWNER PAGES (NEVER ON TENANT PAGES) */}
           {isOwner && (
             <Link
               href={ROUTES.OWNER_ADD_PROPERTY}
@@ -180,7 +184,7 @@ export default function Navbar() {
           {/* User Profile or Sign In Button */}
           {currentUser ? (
             <Link
-              href={isOwner ? ROUTES.OWNER_DASHBOARD : ROUTES.PROFILE}
+              href={isOwner || currentUser.role === "owner" ? ROUTES.OWNER_DASHBOARD : ROUTES.PROFILE}
               className="ios-pill-btn ios-pill-btn-solid"
               style={{
                 padding: "0.45rem 1.15rem",
@@ -213,14 +217,6 @@ export default function Navbar() {
           )}
         </div>
       </div>
-
-      <style jsx>{`
-        @media (min-width: 820px) {
-          .desktop-nav {
-            display: flex !important;
-          }
-        }
-      `}</style>
     </header>
   );
 }
