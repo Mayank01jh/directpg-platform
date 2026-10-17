@@ -1,9 +1,24 @@
-"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ROUTES } from "@/constants";
 import { IconCheck } from "@/components/ui/Icons";
+import { getCurrentUser } from "@/lib/userDataStore";
 
 export default function CTABanner() {
+  const [currentUser, setCurrentUser] = useState<any>(null);
+
+  useEffect(() => {
+    setCurrentUser(getCurrentUser());
+    const handleUserUpdate = () => setCurrentUser(getCurrentUser());
+    window.addEventListener("user-updated", handleUserUpdate);
+    return () => window.removeEventListener("user-updated", handleUserUpdate);
+  }, []);
+
+  // Never show PG owner onboarding banner to tenants
+  if (currentUser?.role === "tenant") {
+    return null;
+  }
+
   return (
     <section style={{ padding: "1.5rem 0 2.5rem" }}>
       <div className="app-container">
