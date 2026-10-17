@@ -1,11 +1,12 @@
 export interface RoomPlan {
-  id: string;
+  id?: string;
   name: string;
   type: "single" | "double" | "triple" | "four";
   price: number;
   deposit: number;
   availableBeds: number;
   features: string[];
+  monthlyRent?: number;
 }
 
 export interface AmenityItem {
