@@ -1,0 +1,33 @@
+{
+  "name": "directpg-backend",
+  "version": "1.0.0",
+  "description": "DirectPG Production Backend API - Render deployed with MongoDB Auth/Credentials and Supabase Relational Database",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "pg",
+    "hostel",
+    "express",
+    "mongodb",
+    "supabase",
+    "render",
+    "auth"
+  ],
+  "author": "DirectPG Team",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0"
+  }
+}
