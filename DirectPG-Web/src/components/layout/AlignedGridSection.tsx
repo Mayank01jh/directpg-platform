@@ -1056,17 +1056,6 @@ export default function AlignedGridSection() {
 
       </div>
 
-      {/* Responsive layout styles for 2/3 split and 6 columns */}
-      <style jsx>{`
-        @media (min-width: 900px) {
-          .row-3-split {
-            grid-template-columns: 1fr 1.8fr !important;
-          }
-          .row-4-six-columns {
-            grid-template-columns: repeat(6, 1fr) !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
