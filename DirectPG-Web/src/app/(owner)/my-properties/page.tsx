@@ -228,7 +228,7 @@ export default function MyPropertiesPage() {
                       color: "var(--text-secondary)",
                     }}
                   >
-                    {r.name}: ₹{r.monthlyRent.toLocaleString("en-IN")}
+                    {r.name}: ₹{(r.monthlyRent || r.price || 0).toLocaleString("en-IN")}
                   </span>
                 ))}
               </div>
