@@ -18,40 +18,40 @@ export interface AmenityItem {
 export interface PGProperty {
   id: string;
   title: string;
-  tagline: string;
+  tagline?: string;
   description: string;
-  area: string;
+  area?: string;
   city: string;
-  state: string;
-  pincode: string;
+  state?: string;
+  pincode?: string;
   address: string;
   gender: "female" | "male" | "any";
   rating: number;
   reviewCount: number;
   minPrice: number;
   startingPrice?: number;
-  depositType: string;
+  depositType?: string;
   depositAmount?: number;
   badge?: string;
   isVerified: boolean;
-  zeroBrokerage: boolean;
+  zeroBrokerage?: boolean;
   images: string[];
   amenities: string[];
   roomPlans: RoomPlan[];
   rules: string[];
-  mealsIncluded: boolean;
-  mealDetails: string;
-  metroDistance: string;
-  techParkDistance: string;
+  mealsIncluded?: boolean;
+  mealDetails?: string;
+  metroDistance?: string;
+  techParkDistance?: string;
   owner: {
     name: string;
     phone: string;
-    whatsapp: string;
-    experience: string;
-    verified: boolean;
-    responseTime: string;
+    whatsapp?: string;
+    experience?: string;
+    verified?: boolean;
+    responseTime?: string;
   };
-  reviewsList: {
+  reviewsList?: {
     id: string;
     author: string;
     date: string;

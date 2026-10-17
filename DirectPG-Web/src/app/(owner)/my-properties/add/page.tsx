@@ -82,7 +82,7 @@ export default function AddPropertyPage() {
       ],
       description: `${title} is a fully-equipped, modern PG in ${city}. Features high-speed fiber internet, chef-prepared meals, daily housekeeping, and 24x7 biometric safety. Zero brokerage verified by DirectPG.`,
       amenities: selectedAmenities,
-      houseRules: [
+      rules: [
         "Gate closes at 11:00 PM for tenant safety",
         "No smoking or loud music inside corridors",
         "Guests allowed in common lounge till 8:00 PM",
