@@ -278,3 +278,19 @@ button {
     font-size: 1.3rem;
   }
 }
+
+/* Clean Responsive Utilities */
+@media (min-width: 820px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .row-3-split {
+    grid-template-columns: 1fr 1.8fr !important;
+  }
+  .row-4-six-columns {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+}
