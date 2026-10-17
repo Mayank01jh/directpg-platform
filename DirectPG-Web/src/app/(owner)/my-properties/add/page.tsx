@@ -67,20 +67,28 @@ export default function AddPropertyPage() {
     const newProperty: PGProperty = {
       id: newId,
       title: title.trim(),
+      tagline: "Direct-to-Owner Verified Living",
+      description: `${title} is a fully-equipped, modern PG in ${city}. Features high-speed fiber internet, chef-prepared meals, daily housekeeping, and 24x7 biometric safety. Zero brokerage verified by DirectPG.`,
+      area: `Central ${city}`,
       city: city,
+      state: "India",
+      pincode: "560001",
       address: address.trim(),
       gender: gender,
       badge: "Newly Added",
       rating: 4.9,
       reviewCount: 1,
+      minPrice: priceNum,
       startingPrice: priceNum,
+      depositType: depositNum > 0 ? "1 Month" : "Zero Deposit",
       depositAmount: depositNum,
+      isVerified: true,
+      zeroBrokerage: true,
       images: [
         imageUrl,
         "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop",
         "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
       ],
-      description: `${title} is a fully-equipped, modern PG in ${city}. Features high-speed fiber internet, chef-prepared meals, daily housekeeping, and 24x7 biometric safety. Zero brokerage verified by DirectPG.`,
       amenities: selectedAmenities,
       rules: [
         "Gate closes at 11:00 PM for tenant safety",
@@ -88,6 +96,10 @@ export default function AddPropertyPage() {
         "Guests allowed in common lounge till 8:00 PM",
         "Strict adherence to biometric access guidelines",
       ],
+      mealsIncluded: true,
+      mealDetails: "3 Chef-Prepared Meals Daily",
+      metroDistance: "Within 500m",
+      techParkDistance: "Within 1 km",
       roomPlans: [
         {
           id: "plan-" + Date.now() + "-1",
@@ -118,6 +130,16 @@ export default function AddPropertyPage() {
         verified: true,
         responseTime: "Under 15 mins",
       },
+      reviewsList: [
+        {
+          id: "rev-new-1",
+          author: "Rohan Verma",
+          date: "Yesterday",
+          rating: 5,
+          text: "Very well maintained PG with fast Wi-Fi and clean rooms.",
+          role: "Software Engineer",
+        },
+      ],
     };
 
     addCustomProperty(newProperty);
