@@ -90,16 +90,20 @@ export default function AddPropertyPage() {
       ],
       roomPlans: [
         {
+          id: "plan-" + Date.now() + "-1",
           type: "single",
           name: "Single Occupancy AC",
+          price: priceNum,
           monthlyRent: priceNum,
           deposit: depositNum,
           availableBeds: 2,
           features: ["Private Attached Balcony", "Air Conditioning", "Orthopedic Mattress", "Work Desk & Ergonomic Chair"],
         },
         {
+          id: "plan-" + Date.now() + "-2",
           type: "double",
           name: "Double Sharing AC",
+          price: Math.round(priceNum * 0.7),
           monthlyRent: Math.round(priceNum * 0.7),
           deposit: Math.round(depositNum * 0.7),
           availableBeds: 4,
