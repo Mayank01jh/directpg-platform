@@ -134,6 +134,13 @@ ALTER TABLE reviews ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public can view properties" ON properties FOR SELECT USING (true);
 CREATE POLICY "Public can view room plans" ON room_plans FOR SELECT USING (true);
 CREATE POLICY "Public can view reviews" ON reviews FOR SELECT USING (true);
+CREATE POLICY "Public can insert reviews" ON reviews FOR INSERT WITH CHECK (true);
+
+-- Allow public bookings and walkthrough visit scheduling
+CREATE POLICY "Public can create bookings" ON bookings FOR INSERT WITH CHECK (true);
+CREATE POLICY "Public can view bookings" ON bookings FOR SELECT USING (true);
+CREATE POLICY "Public can schedule visits" ON scheduled_visits FOR INSERT WITH CHECK (true);
+CREATE POLICY "Public can view visits" ON scheduled_visits FOR SELECT USING (true);
 
 -- Allow authenticated backend service role full access
 CREATE POLICY "Full access to service role" ON properties USING (auth.role() = 'service_role');
