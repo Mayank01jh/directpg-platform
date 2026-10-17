@@ -1,0 +1,12 @@
+{
+  "name": "directpg-platform-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix DirectPG-Web",
+    "build": "npm run build --prefix DirectPG-Web",
+    "start": "npm run start --prefix DirectPG-Web",
+    "install:web": "npm install --prefix DirectPG-Web",
+    "install:backend": "npm install --prefix DirectPG-Backend"
+  }
+}
