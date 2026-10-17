@@ -31,6 +31,7 @@ export interface PGProperty {
   minPrice: number;
   startingPrice?: number;
   depositType: string;
+  depositAmount?: number;
   badge?: string;
   isVerified: boolean;
   zeroBrokerage: boolean;
