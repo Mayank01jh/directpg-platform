@@ -46,7 +46,7 @@ export default function OwnerDashboardPage() {
   const totalListings = properties.length;
   const totalBeds = totalListings * 12;
   const occupiedBeds = Math.round(totalBeds * 0.91);
-  const totalRevenue = properties.reduce((acc, curr) => acc + curr.startingPrice * 4, 0);
+  const totalRevenue = properties.reduce((acc, curr) => acc + (curr.startingPrice || curr.minPrice || 0) * 4, 0);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
@@ -428,7 +428,7 @@ export default function OwnerDashboardPage() {
                   <div>
                     <span style={{ fontSize: "0.72rem", color: "var(--text-muted)" }}>Starts at</span>
                     <div style={{ fontSize: "0.95rem", fontWeight: 800, color: "#007AFF" }}>
-                      ₹{p.startingPrice.toLocaleString("en-IN")}/mo
+                      ₹{(p.startingPrice || p.minPrice || 0).toLocaleString("en-IN")}/mo
                     </div>
                   </div>
                   <Link

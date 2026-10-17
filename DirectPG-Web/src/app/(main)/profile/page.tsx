@@ -429,7 +429,7 @@ function ProfileContent() {
 
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto", paddingTop: "0.75rem", borderTop: "1px solid var(--border-color)" }}>
                         <div style={{ fontSize: "0.95rem", fontWeight: 800, color: "#007AFF" }}>
-                          ₹{prop.startingPrice.toLocaleString("en-IN")}<span style={{ fontSize: "0.7rem", color: "var(--text-muted)", fontWeight: 500 }}>/mo</span>
+                          ₹{(prop.startingPrice ?? prop.minPrice ?? 0).toLocaleString("en-IN")}<span style={{ fontSize: "0.7rem", color: "var(--text-muted)", fontWeight: 500 }}>/mo</span>
                         </div>
                         <Link
                           href={`/listings/${prop.id}`}

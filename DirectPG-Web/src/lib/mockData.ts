@@ -28,6 +28,7 @@ export interface PGProperty {
   rating: number;
   reviewCount: number;
   minPrice: number;
+  startingPrice?: number;
   depositType: string;
   isVerified: boolean;
   zeroBrokerage: boolean;
