@@ -1,9 +1,18 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ROUTES } from "@/constants";
 
 export default function Footer() {
-  const footerSections = [
+  const pathname = usePathname();
+
+  const isOwnerPage =
+    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/my-properties") ||
+    pathname.startsWith("/earnings") ||
+    pathname.startsWith("/bookings");
+
+  const tenantSections = [
     {
       title: "Explore Stays",
       links: [
@@ -27,29 +36,68 @@ export default function Footer() {
       ],
     },
     {
-      title: "For PG Owners",
+      title: "DirectPG Trust & Safety",
       links: [
-        { label: "List Property Free", href: "/register?role=owner" },
-        { label: "Owner Dashboard", href: ROUTES.OWNER_DASHBOARD },
-        { label: "DirectPG Verified Badge", href: "/about" },
-        { label: "Automated Rent Collection", href: "/pricing" },
-        { label: "Partner FAQ", href: "/support" },
+        { label: "42-Point Physical Inspection", href: "/about" },
+        { label: "Biometric Keyless Access", href: "/safety" },
+        { label: "Zero Brokerage Guarantee", href: "/guarantee" },
+        { label: "Direct Owner Contact", href: "/about" },
+        { label: "Tenant Verified Reviews", href: "/#testimonials" },
       ],
     },
     {
-      title: "DirectPG Store",
+      title: "Tenant Support & Legal",
       links: [
         { label: "About DirectPG", href: ROUTES.ABOUT },
-        { label: "Safety & Biometrics", href: "/safety" },
-        { label: "Zero Brokerage Guarantee", href: "/guarantee" },
+        { label: "Tenant Help & Support", href: "/support" },
         { label: "Refund Policy", href: "/refund" },
         { label: "Cookie Policy", href: "/cookies" },
-        { label: "Customer Support", href: "/support" },
         { label: "Terms of Service", href: "/terms" },
         { label: "Privacy Policy", href: "/privacy" },
       ],
     },
   ];
+
+  const ownerSections = [
+    {
+      title: "Host Management",
+      links: [
+        { label: "Host Dashboard", href: ROUTES.OWNER_DASHBOARD },
+        { label: "My Properties", href: ROUTES.OWNER_PROPERTIES },
+        { label: "Tenant Bookings", href: ROUTES.OWNER_BOOKINGS },
+        { label: "Earnings & Payouts", href: ROUTES.OWNER_EARNINGS },
+        { label: "List New PG", href: ROUTES.OWNER_ADD_PROPERTY },
+      ],
+    },
+    {
+      title: "Partner Central",
+      links: [
+        { label: "DirectPG Verified Partner Standards", href: "/about" },
+        { label: "Automated Rent Collection", href: "/pricing" },
+        { label: "Biometric Integration Support", href: "/safety" },
+        { label: "Escrow Payout Guidelines", href: "/guarantee" },
+      ],
+    },
+    {
+      title: "Host Legal & Policies",
+      links: [
+        { label: "Host Terms of Service", href: "/terms" },
+        { label: "Partner Privacy Policy", href: "/privacy" },
+        { label: "Cancellation & Refund Terms", href: "/refund" },
+        { label: "Platform Standards", href: "/safety" },
+      ],
+    },
+    {
+      title: "Host Support",
+      links: [
+        { label: "Dedicated Host Help Desk", href: "/support" },
+        { label: "Listing Optimization FAQ", href: "/support" },
+        { label: "Account Settings", href: ROUTES.OWNER_DASHBOARD },
+      ],
+    },
+  ];
+
+  const footerSections = isOwnerPage ? ownerSections : tenantSections;
 
   return (
     <footer style={{
@@ -70,7 +118,9 @@ export default function Footer() {
           color: "var(--text-caption)",
           lineHeight: 1.6,
         }}>
-          * DirectPG is India&apos;s premier direct-to-owner student housing and co-living discovery marketplace. All listings displayed are verified for physical existence, amenities, and owner identity. Zero brokerage applies to direct bookings made through the DirectPG portal.
+          {isOwnerPage
+            ? "* DirectPG Partner Central empowers PG and hostel operators with zero-brokerage direct tenant acquisition, automated escrow payouts, and smart digital leases."
+            : "* DirectPG is India's premier direct-to-owner student housing and co-living discovery marketplace. All listings displayed are verified for physical existence, amenities, and owner identity. Zero brokerage applies to direct bookings made through the DirectPG portal."}
         </div>
 
         {/* 4 Column Navigation Grid */}
